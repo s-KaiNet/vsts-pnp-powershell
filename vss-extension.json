@@ -1,0 +1,37 @@
+{
+    "manifestVersion": 1,
+    "author": "Sergei Sergeev",
+    "id": "pnp-powershell",
+    "version": "0.0.3",
+    "name": "PnP-PowerShell",
+    "publisher": "s-kainet",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Run a PnP-PowerShell script",
+    "categories": [
+        "Build and release"
+    ],
+    "files": [
+        {
+            "path": "PnPPowerShell"
+        }
+    ],
+    "scopes": [
+        "vso.build"
+    ],
+    "contributions": [
+        {
+            "id": "pnp-powershell",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "PnPPowerShell"
+            }
+        }
+    ]
+}
