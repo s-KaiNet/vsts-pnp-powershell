@@ -2,7 +2,6 @@ import { Gulpclass, Task } from 'gulpclass';
 import * as gulp from 'gulp';
 const jeditor = require("gulp-json-editor");
 
-
 @Gulpclass()
 export class GulpFile {
 

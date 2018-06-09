@@ -16,10 +16,6 @@ export function initPnP(contents: string[]): void {
     contents.push(' Install-Module SharePointPnPPowerShellOnline -Force -Scope CurrentUser -Verbose')
     contents.push('}')
 
-    contents.push(`$siteUrl = '${siteUrl}'`)
-    contents.push(`$username = '${user}'`)
-    contents.push(`$password = '${password}'`)
-
     contents.push('Write-Host $siteUrl')
     contents.push('Write-Host $user')
     contents.push('Write-Host $password')
