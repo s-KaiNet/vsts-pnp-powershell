@@ -9,9 +9,9 @@
     "runsOn": ["Agent", "DeploymentGroup"],
     "author": "Sergei Sergeev",
     "version": {
-        "Major": 0,
+        "Major": 1,
         "Minor": 0,
-        "Patch": 12
+        "Patch": 18
     },
     "minimumAgentVersion": "2.115.0",
     "showEnvironmentVariables": true,
@@ -21,6 +21,27 @@
         "isExpanded": false
     }],
     "inputs": [{
+        "name": "spSiteUrl",
+        "type": "string",
+        "label": "SharePoint Site Url",
+        "required": true,
+        "defaultValue": "",
+        "helpMarkDown": "Site specified here will be used in Connect-PnPOnline command."
+    }, {
+        "name": "spUser",
+        "type": "string",
+        "label": "Username",
+        "required": true,
+        "defaultValue": "",
+        "helpMarkDown": "Provide a user, which will be used to authenticate against SharePoint in Connect-PnPOnline command."
+    }, {
+        "name": "spPassword",
+        "type": "string",
+        "label": "Password",
+        "required": true,
+        "defaultValue": "",
+        "helpMarkDown": "Provide a user's password."
+    }, {
         "name": "targetType",
         "type": "radio",
         "label": "Type",
