@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -p .",
     "package": "npm run build && gulp version && cd ../.. && tfx extension create --manifest-globs vss-extension.json",
-    "publish": "npm run package && cd ../.. && tfx extension publish --share-with mvapps-vsts --rev-version"
+    "vsts-publish": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --share-with mvapps-vsts --rev-version --token $VSTS_TOKEN\""
   },
   "author": "Sergei Sergeev",
   "license": "MIT",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/gulp": "^4.0.5",
     "@types/node": "^10.3.1",
+    "cross-env": "^5.2.0",
     "gulp": "^3.9.1",
     "gulp-json-editor": "^2.4.1",
     "gulpclass": "^0.1.2",
