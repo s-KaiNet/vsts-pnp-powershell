@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "author": "Sergei Sergeev",
     "id": "pnp-powershell",
-    "version": "0.0.25",
+    "version": "0.0.33",
     "name": "PnP-PowerShell",
     "publisher": "s-kainet",
     "targets": [
@@ -22,11 +22,6 @@
             "path": "Readme.md"
         }
     },
-    "screenshots": [
-        {
-            "path": "images/common-1.png"
-        }
-    ],
     "tags": [
         "PnP",
         "PowerShell",
