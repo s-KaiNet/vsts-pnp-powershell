@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -p .",
     "package": "npm run build && gulp version && cd ../.. && tfx extension create --manifest-globs vss-extension.json",
-    "vsts-publish": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --share-with mvapps-vsts --rev-version --token $VSTS_TOKEN\""
+    "vsts-publish": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --rev-version --token $VSTS_TOKEN\"",
+    "publish-internal": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --share-with mvapps-vsts --rev-version --token $VSTS_TOKEN\""
   },
   "author": "Sergei Sergeev",
   "license": "MIT",

@@ -2,9 +2,10 @@
     "manifestVersion": 1,
     "author": "Sergei Sergeev",
     "id": "pnp-powershell",
-    "version": "0.0.33",
+    "version": "0.0.38",
     "name": "PnP-PowerShell",
     "publisher": "s-kainet",
+    "public": true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
