@@ -81,12 +81,13 @@ async function run() {
         //
         // Note, use "-Command" instead of "-File" to match the Windows implementation. Refer to
         // comment on Windows implementation for an explanation why "-Command" is preferred.
-    let powershell = tl.tool(tl.which('pwsh') || tl.which('powershell') || tl.which('pwsh', true))
+    let powershell = tl.tool(tl.which('powershell') || tl.which('pwsh', true))
             .arg('-NoLogo')
             .arg('-NoProfile')
             .arg('-NonInteractive')
             .arg('-Command')
             .arg(`. '${filePath.replace("'", "''")}'`)
+
     let options = {
       cwd: input_workingDirectory,
       failOnStdErr: false,

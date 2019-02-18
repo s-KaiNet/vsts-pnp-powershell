@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 40
+        "Patch": 53
     },
     "minimumAgentVersion": "2.115.0",
     "showEnvironmentVariables": true,

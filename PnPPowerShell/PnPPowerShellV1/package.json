@@ -5,9 +5,10 @@
   "main": "pnp-powershell.js",
   "scripts": {
     "build": "tsc -p .",
-    "package": "npm run build && gulp version && cd ../.. && tfx extension create --manifest-globs vss-extension.json",
+    "package": "npm run build && gulp version && cd ../.. && tfx extension create --rev-version --bypass-validation --manifest-globs vss-extension.json",
+    "upload-local": "cross-env-shell \"npm run package && cd ../.. && tfx build tasks upload --task-path PnPPowerShell\\PnPPowerShellV1\\ --overwrite true --service-url https://dev.azure.com/Mastaq --token $VSTS_TOKEN\"",
     "vsts-publish": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --rev-version --token $VSTS_TOKEN\"",
-    "publish-internal": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --share-with mvapps-vsts --rev-version --token $VSTS_TOKEN\""
+    "check": "cross-env-shell \" echo $VSTS_TOKEN \""
   },
   "author": "Sergei Sergeev",
   "license": "MIT",
