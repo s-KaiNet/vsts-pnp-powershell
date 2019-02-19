@@ -4,6 +4,8 @@ export function initPnP(contents: string[]): void {
   let siteUrl = tl.getInput('spSiteUrl', true)
   let user = tl.getInput('spUser', true)
   let password = tl.getInput('spPassword', true)
+  let pnpVersion = tl.getInput('pnpVersion')
+  let spVersion = tl.getInput('spVersion', true)
 
   contents.push('$nugetProvider = Get-PackageProvider -Name "NuGet" -ErrorAction SilentlyContinue')
 
@@ -14,13 +16,20 @@ export function initPnP(contents: string[]): void {
   contents.push(' Write-Host "Found NuGet package provider"')
   contents.push('}')
 
-  contents.push('$pnpModule = Get-InstalledModule -Name "SharePointPnPPowerShellOnline" -ErrorAction SilentlyContinue')
+  contents.push(`$pnpModule = Get-InstalledModule -Name ${getModuleName(spVersion)} -ErrorAction SilentlyContinue`)
 
   contents.push('if($pnpModule -eq $null) {')
   contents.push(' Write-Host "PnP-PowerShell module has not installed. Installing..."')
-  contents.push(' Install-Module SharePointPnPPowerShellOnline -Force -Scope CurrentUser -Verbose')
+
+  // install specific version if provided
+  if (pnpVersion) {
+    contents.push(` Install-Module ${getModuleName(spVersion)} -Force -Scope CurrentUser -RequiredVersion ${pnpVersion} -Verbose`)
+  } else {
+    contents.push(` Install-Module ${getModuleName(spVersion)} -Force -Scope CurrentUser -Verbose`)
+  }
+
   contents.push('} else {')
-  contents.push(' Write-Host "Found SharePointPnPPowerShellOnline module"')
+  contents.push(` Write-Host "Found ${getModuleName(spVersion)} module"`)
   contents.push('}')
 
   contents.push(`$siteUrl = '${siteUrl}'`)
@@ -33,4 +42,15 @@ export function initPnP(contents: string[]): void {
   contents.push('Write-Host "Connecting to SharePoint Online. Site url: $($siteUrl). Username: $($username)"')
   contents.push('Connect-PnPOnline -Url $siteUrl -Credentials $cred')
   contents.push('Write-Host "Connected."')
+}
+
+function getModuleName(spVersion: string): string {
+  switch (spVersion) {
+    case 'sponline':
+      return 'SharePointPnPPowerShellOnline'
+    case 'sp2013':
+      return 'SharePointPnPPowerShell2013'
+    case 'sp2016':
+      return 'SharePointPnPPowerShell2016'
+  }
 }

@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "author": "Sergei Sergeev",
     "id": "pnp-powershell",
-    "version": "0.0.48",
+    "version": "0.0.58",
     "name": "PnP-PowerShell",
     "publisher": "s-kainet",
     "public": true,

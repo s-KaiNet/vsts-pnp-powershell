@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -p .",
     "package": "npm run build && gulp version && cd ../.. && tfx extension create --rev-version --bypass-validation --manifest-globs vss-extension.json",
-    "upload-local": "cross-env-shell \"npm run package && cd ../.. && tfx build tasks upload --task-path PnPPowerShell\\PnPPowerShellV1\\ --overwrite true --service-url https://dev.azure.com/Mastaq --token $VSTS_TOKEN\"",
+    "upload-local": "npm run package && gulp upload-local",
     "vsts-publish": "cross-env-shell \"npm run package && cd ../.. && tfx extension publish --rev-version --token $VSTS_TOKEN\"",
     "check": "cross-env-shell \" echo $VSTS_TOKEN \""
   },
@@ -22,6 +22,8 @@
     "cross-env": "^5.2.0",
     "gulp": "^3.9.1",
     "gulp-json-editor": "^2.4.1",
+    "gulp-run-command": "0.0.9",
+    "gulp-shell": "^0.6.5",
     "gulpclass": "^0.1.2",
     "ts-node": "^6.1.0",
     "tslint": "^5.10.0",

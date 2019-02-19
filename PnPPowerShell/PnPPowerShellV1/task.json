@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 53
+        "Patch": 64
     },
     "minimumAgentVersion": "2.115.0",
     "showEnvironmentVariables": true,
@@ -28,6 +28,18 @@
         "defaultValue": "",
         "helpMarkDown": "Site specified here will be used in Connect-PnPOnline command."
     }, {
+        "name": "spVersion",
+        "defaultValue": "sponline",
+        "label": "SharePoint Version",
+        "helpMarkDown": "Specify your target SharePoint environment",
+        "required": true,
+        "type": "radio",
+        "options": {
+            "sponline": "SharePoint Online",
+            "sp2013": "SharePoint 2013",
+            "sp2016": "SharePoint 2016"
+        }
+    }, {
         "name": "spUser",
         "type": "string",
         "label": "Username",
@@ -41,6 +53,13 @@
         "required": true,
         "defaultValue": "",
         "helpMarkDown": "Provide a user's password."
+    }, {
+        "name": "pnpVersion",
+        "type": "string",
+        "label": "Version",
+        "required": false,
+        "defaultValue": "",
+        "helpMarkDown": "Provide specific version of PnP-PowerShell to be installed, i.e. 3.6.1902.0. When empty the latest version will be used"
     }, {
         "name": "targetType",
         "type": "radio",
