@@ -30,6 +30,8 @@ export function initPnP(contents: string[]): void {
 
   contents.push('} else {')
   contents.push(` Write-Host "Found ${getModuleName(spVersion)} module"`)
+  contents.push(` Write-Host "Importing ${getModuleName(spVersion)} module"`)
+  contents.push(` Import-Module ${getModuleName(spVersion)}`)
   contents.push('}')
 
   contents.push(`$siteUrl = '${siteUrl}'`)
