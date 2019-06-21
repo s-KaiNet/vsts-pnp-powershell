@@ -2,7 +2,7 @@
     "id": "e47c77ac-a316-45ce-bb10-5932158c7af4",
     "name": "PnPPowerShell",
     "friendlyName": "PnP-PowerShell",
-    "description": "Run a PnP-PowerShell script against SharePoint Online site",
+    "description": "Run a PnP-PowerShell script against SharePoint site",
     "helpMarkDown": "[More Information](https://github.com/SharePoint/PnP-PowerShell)",
     "category": "Utility",
     "visibility": ["Build", "Release"],
@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 64
+        "Patch": 73
     },
     "minimumAgentVersion": "2.115.0",
     "showEnvironmentVariables": true,
@@ -37,7 +37,8 @@
         "options": {
             "sponline": "SharePoint Online",
             "sp2013": "SharePoint 2013",
-            "sp2016": "SharePoint 2016"
+            "sp2016": "SharePoint 2016",
+            "sp2019": "SharePoint 2019"
         }
     }, {
         "name": "spUser",

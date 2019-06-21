@@ -1,6 +1,6 @@
 # PnP-PowerShell VSTS build step
 
-This build step allows you to easily run [PnP-PowerShell](https://github.com/SharePoint/PnP-PowerShell) script against your SharePoint Online site. 
+This build step allows you to easily run [PnP-PowerShell](https://github.com/SharePoint/PnP-PowerShell) script against your SharePoint site. 
 
 ## Setup  
 

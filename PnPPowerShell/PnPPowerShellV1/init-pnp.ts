@@ -52,5 +52,7 @@ function getModuleName(spVersion: string): string {
       return 'SharePointPnPPowerShell2013'
     case 'sp2016':
       return 'SharePointPnPPowerShell2016'
+    case 'sp2019':
+      return 'SharePointPnPPowerShell2019'
   }
 }
